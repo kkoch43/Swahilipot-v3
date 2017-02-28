@@ -1,4 +1,4 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center"><img width="60px" height="60px" src="https://raw.githubusercontent.com/Reaper45/swahilipot-community-portal/master/img/swahilipotlogo.png"></p>
 
 ## SwahiliPot-v3
 
