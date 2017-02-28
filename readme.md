@@ -1,4 +1,4 @@
-<p align="center"><img width="60px" height="60px" src="https://raw.githubusercontent.com/Reaper45/swahilipot-community-portal/master/img/swahilipotlogo.png"><h2>SwahiliPot-v3</h2></p>
+<p align="center"><img width="60px" height="60px" src="https://raw.githubusercontent.com/Reaper45/swahilipot-community-portal/master/img/swahilipotlogo.png">SwahiliPot-v3</p>
 
 ## SwahiliPot-v3
 
