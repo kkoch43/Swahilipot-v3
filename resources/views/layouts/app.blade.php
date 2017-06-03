@@ -14,6 +14,18 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('style')
 
+    <style>
+    .dropdown-header{
+      font-size: 14px;
+    }
+    .dropdown-toggle{
+      padding: 5px 0px 0px 0px !important;
+    }
+    .dropdown-toggle img{
+      width: 40px;
+      height: 40px;
+    }
+    </style>
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -54,14 +66,25 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                          <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                          @if (Auth::user()->usertype == 'super')
+                            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                          @endif
 
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
+                                </a> --}}
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">
+                                  <img class="img-circle" alt="{{ Auth::user()->name }}" src="https://www.gravatar.com/avatar/c33593ed9ad55f1a67fe4c362627199b" >
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+
+                                  <li class="dropdown-header">Signed In as <strong>{{ Auth::user()->name }}</strong></li>
+                                  <li role="separator" class="divider"></li>
+                                  <li><a href="#">Your Profile</a></li>
+                                  <li><a href="#">Settings</a></li>
+                                  <li role="separator" class="divider"></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
