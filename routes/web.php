@@ -11,10 +11,24 @@
 |
 */
 
+// Landing page
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
+Route::get('/home', 'HomeController@index');
+
+// Login and Register Routes
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+// Admins Routes
+Route::group(['middleware' =>'admin'], function(){
+
+  // Admins dashboard
+  Route::get('/dashboard', 'AdminController@index')->name('dashboard');
+});
+
+// Any authenticated User
+Route::group(['middleware' =>'auth'], function(){
+
+});
