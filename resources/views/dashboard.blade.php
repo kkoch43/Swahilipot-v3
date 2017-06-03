@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+  {{ config('app.name') }} | Home
+@endsection
+
 @section('content')
 <div class="container" style="width: 100%;">
     <div class="row">
@@ -12,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 

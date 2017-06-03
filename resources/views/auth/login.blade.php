@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
+@section('title')
+  {{ config('app.name')}} | Login
+@endsection
+
+@section('style')
+  {{-- custom css styling here --}}
+
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
