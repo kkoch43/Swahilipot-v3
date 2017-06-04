@@ -75,7 +75,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a> --}}
                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">
-                                  <img class="img-circle" alt="{{ Auth::user()->name }}" src="https://www.gravatar.com/avatar/c33593ed9ad55f1a67fe4c362627199b" >
+                                  <img class="img-circle" alt="{{ Auth::user()->name }}" src="https://www.gravatar.com/avatar/{{ md5(strtolower(trim(Auth::user()->email))) }}" >
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
