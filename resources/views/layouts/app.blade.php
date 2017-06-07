@@ -82,8 +82,14 @@
 
                                   <li class="dropdown-header">Signed In as <strong>{{ Auth::user()->name }}</strong></li>
                                   <li role="separator" class="divider"></li>
-                                  <li><a href="#">Your Profile</a></li>
-                                  <li><a href="#">Settings</a></li>
+                                  @if (Auth::user()->usertype == 'super')
+                                      <li><a href="{{ route('admin.profile') }}">Your Profile</a></li>
+                                      <li><a href="{{ route('admin.settings') }}">Settings</a></li>
+                                  @else
+                                      <li><a href="{{ route('members.profile') }}">Your Profile</a></li>
+                                      <li><a href="{{ route('members.settings') }}">Settings</a></li>
+                                  @endif
+
                                   <li role="separator" class="divider"></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
