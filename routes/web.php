@@ -21,25 +21,41 @@ Route::get('/home', 'HomeController@index');
 // Login and Register Routes
 Auth::routes();
 
-// Admins Routes
-Route::group(['middleware' =>'admin', 'prefix'=>'admin'], function(){
+/** Admins Routes
+* ===================================================================
+*/
+Route::group(['prefix'=>'admin'], function(){
 
-  // Admins dashboard
+  // Dashboard
   Route::get('/dashboard', 'AdminController@index')->name('dashboard');
+
+  // Profile page
+  Route::get('/profile', [
+    'uses'=>'AdminController@getProfile',
+    'as'=>'admin.profile'
+  ]);
+
+  // Settings page
+  Route::get('/settings', [
+    'uses'=>'AdminController@getSettings',
+    'as'=>'admin.settings'
+  ]);
 });
 
-// Any authenticated User
-Route::group(['middleware' =>'auth', 'prefix'=>'members'], function(){
+/** Any authenticated User(Member)
+* ===================================================================
+*/
+Route::group(['prefix'=>'user'], function(){
 
-  // Users Profile page
-  Route::get('/profile', [
+    // Members Profile page
+    Route::get('/profile', [
     'uses'=>'MemberController@getProfile',
     'as'=>'members.profile'
-  ]);
+    ]);
 
-  // Users Settings page
-  Route::get('/settings', [
+    // Members Settings page
+    Route::get('/settings', [
     'uses'=>'MemberController@getSettings',
     'as'=>'members.settings'
-  ]);
+    ]);
 });
