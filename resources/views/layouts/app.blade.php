@@ -76,6 +76,7 @@
                                 </a> --}}
                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">
                                   <img class="img-circle" alt="{{ Auth::user()->name }}" src="https://www.gravatar.com/avatar/{{ md5(strtolower(trim(Auth::user()->email))) }}" >
+                                  <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">

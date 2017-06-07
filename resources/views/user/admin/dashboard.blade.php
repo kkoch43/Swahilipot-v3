@@ -9,8 +9,13 @@
     <div class="row">
         <div class="col-md-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Menu</div>
-
+                <div class="admin-profile-picture">
+                    @if (Storage::disk('user_profile_pic')->has(Auth::user()->profile_pic))
+                        <img class="img-responsive img-circle" src="{{ route('get.profile_pic', ['filename'=>'']) }}" title="" alt="">
+                    @else
+                        <img class="admin-profile-picture img-responsive img-circle" src="{{ url('img/profile.png')}}" title="" alt="">
+                    @endif
+                </div>
                 <div class="panel-body">
 
                 </div>
