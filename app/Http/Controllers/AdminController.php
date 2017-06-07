@@ -1,26 +1,23 @@
 <?php
-
+/**
+ * Author: reaper45
+ * Date: 06/06/17
+ * Time: 23:25
+ *
+ **/
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 class AdminController extends UserController
 {
-  /**
-   * Create a new controller instance.
-   *
-   * @return void
-   */
+  // Set the admin middleware for this class
   public function __construct()
   {
-      $this->middleware('auth');
+      $this->middleware('admin');
   }
-
-  /**
-  * Show the application dashboard.
-  *
-  * @return \Illuminate\Http\Response
-  */
+  
+  // Show the application dashboard.
   public function index(Request $request)
   {
     return view('dashboard');
