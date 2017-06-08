@@ -16,10 +16,10 @@ class AdminController extends UserController
   {
       $this->middleware('admin');
   }
-  
+
   // Show the application dashboard.
   public function index(Request $request)
   {
-    return view('dashboard');
+    return view('user.admin.dashboard');
   }
 }

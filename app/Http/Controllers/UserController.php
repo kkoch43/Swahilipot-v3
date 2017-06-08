@@ -8,6 +8,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Easing things. Class User controller is extended by both Admin and Member.
@@ -17,14 +18,20 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     // Show profile page
-    public function getProfile($value='')
+    public function getProfile()
     {
         return view('user.profile');
     }
 
     // Show settings page
-    public function getSettings($value='')
+    public function getSettings()
     {
         return view('user.settings');
+    }
+
+    public function getProfilepic($filename)
+    {
+        $file = Storage::disk('user_profile_pic')->get($filename);
+        return response( $file, 200);
     }
 }
