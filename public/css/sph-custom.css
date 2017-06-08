@@ -52,7 +52,8 @@
  }
 
  .panel a.list-group-item:focus, .panel a.list-group-item:hover{
-     background: #fff;
+     background: #3097d1;
+     color: #eee;
  }
  /* Sizing fonts + icons**/
  .fa-lg {
