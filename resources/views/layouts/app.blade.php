@@ -14,7 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/simple-line-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sph-custom.css') }}" rel="stylesheet">
     @yield('style')
 
     <style>
@@ -119,5 +119,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/sph-custom.js') }}"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
     <div class="row">
         <!--Side Bar nav-->
         <div class="col-md-2" style="padding-left: 0px;">
-            <div class="panel panel-default dashboard-panel">
+            <div class="panel panel-default dashboard-panel" id="dashboard-nav">
                 <div class="admin-profile-picture">
                     @if (Storage::disk('user_profile_pic')->has(Auth::user()->profile_pic))
                         <img class="img-responsive img-circle" src="{{ route('get.profile_pic', ['filename'=>'']) }}" title="" alt="">
@@ -32,10 +32,14 @@
                         <i class="fa-home fa"></i>Dashboard
                         <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
                     </a>
-                    <a class="list-group-item" href="#">
+                    <a class="list-group-item" role="button" data-toggle="collapse" data-parent="#dashboard-nav" href="#sph-members" aria-expanded="true" aria-controls="sph-members" href="#">
                         <i class="fa icon-people icons icon"></i>SPH Members
                         <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
                     </a>
+                    <div id="sph-members" class="panel-collapse collapse">
+                        <a class="list-group-item" href="#">Active</a>
+                        <a class="list-group-item" href="#">New Member</a>
+                    </div>
                     <a class="list-group-item" href="#">
                         <i class="fa fa-envelope-o"></i>Messaging
                         <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
