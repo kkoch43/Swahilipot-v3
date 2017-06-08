@@ -10,18 +10,18 @@
     </style>
 @endsection
 @section('content')
-<div class="container" style="width: 100%;">
+<div class="container" style="width: 100%; padding-top: 50px;">
     <div class="row">
         <!--Side Bar nav-->
-        <div class="col-md-2" style="padding-left: 0px;">
+        <div class="col-md-2 admin-nav" style="padding-left: 0px;">
             <div class="panel panel-default dashboard-panel">
-                <div class="admin-profile-picture">
+                {{-- <div class="admin-profile-picture">
                     @if (Storage::disk('user_profile_pic')->has(Auth::user()->profile_pic))
                         <img class="img-responsive img-circle" src="{{ route('get.profile_pic', ['filename'=>'']) }}" title="" alt="">
                     @else
                         <img class="admin-profile-picture img-responsive img-circle" src="{{ url('img/profile.png')}}" title="" alt="">
                     @endif
-                </div>
+                </div> --}}
                 <hr style="margin: 0 auto;"/>
                 <div class="admin-details text-center">
                     <span class="fa-2x">{{ Auth::user()->name }}</span> | Admin<span class="online"></span>
@@ -106,7 +106,7 @@
         </div>
         <!--End side bar-->
 
-        <div class="col-md-10 dashboard-container" style="padding-left: 0px;">
+        <div class="col-md-10 col-md-offset-2 dashboard-container" style="padding-left: 0px;">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="fa-2x panel-heading">Dashboard</div>
