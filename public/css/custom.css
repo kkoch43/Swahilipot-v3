@@ -1,7 +1,7 @@
 /**
  *
  *
- */
+ * Application Stying **/
 
  *{
      margin: 0;
@@ -11,7 +11,109 @@
  body{
 
  }
+ /** Navigation bar **/
+ .navbar {
+    margin-bottom: 0px;
+}
 
- .admin-profile-picture{
+/** Side bar **/
+.list-group-item{
+    padding: 15px 15px;
+    border-right: 0px;
+    border-left: 0px;
+}
+.admin-profile-picture img{
      padding: 10px;
+     width: 70%;
+     margin: 0 auto;
  }
+
+ .admin-details{
+padding: 10px;
+ }
+
+ .online{
+     display: inline-block;
+     background: rgb(3, 165, 56);
+     border-radius: 5px;
+     width: 10px;
+     height: 10px;
+     margin-top: 8px;
+     margin-left: 10px;
+ }
+
+ /* Sizing fonts + icons**/
+ .fa-lg {
+   font-size: 1.33333333em;
+   line-height: 0.75em;
+   vertical-align: -15%;
+ }
+
+ .fa-2x {
+   font-size: 1.3em;
+ }
+
+ .fa-3x {
+   font-size: 2em;
+ }
+
+ .fa-4x {
+   font-size: 3em;
+ }
+
+ .fa-5x {
+   font-size: 4em;
+ }
+
+ .fa-fw {
+   width: 1.28571429em;
+   text-align: center;
+ }
+
+.fa{
+    margin-right: 15px;
+}
+
+.fa-angle-right{
+    margin-top: 5px;
+}
+
+.icon{
+    margin-top: 5px;
+}
+/** Cards **/
+.card{
+    box-shadow: 0 1px 0px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.24);
+    background: #fff;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+hr{
+    width: 60%;
+    margin: 22px auto;
+}
+
+/*  dashboard-container **/
+.dashboard-container{
+    margin-top: 22px;
+}
+
+.dashboard-panel{
+    border-top: 0px;
+    border-left: 0px;
+    border-radius: 0px;
+}
+
+/**Right report Bar**/
+.media{
+    padding: 5px 10px;
+}
+
+.progress.progress-mini {
+    height: 5px !important;
+}
+
+.media .icons{
+    line-height: 1.4 !important;
+}

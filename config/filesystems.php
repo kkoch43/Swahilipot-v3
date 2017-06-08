@@ -63,9 +63,9 @@ return [
             'bucket' => env('AWS_BUCKET'),
         ],
 
-        'admin' => [
+        'user_profile_pic' => [
             'driver' => 'local',
-            'root' => storage_path('app/admin/'),
+            'root' => storage_path('app/profile_pic'),
         ],
 
     ],

@@ -42,7 +42,7 @@ Route::group(['prefix'=>'admin'], function(){
   ]);
 });
 
-/** Any authenticated User(Member)
+/** Authenticated User(Member)
 * ===================================================================
 */
 Route::group(['prefix'=>'user'], function(){
@@ -59,3 +59,13 @@ Route::group(['prefix'=>'user'], function(){
     'as'=>'members.settings'
     ]);
 });
+
+/** Shared and public route
+* ===================================================================
+*/
+
+// Retrieve prifile pic for admin/member
+Route::get('image/profile/{filename}', [
+    'uses'=>'UserController@getProfilepic',
+    'as'=>'get.profile_pic'
+]);
