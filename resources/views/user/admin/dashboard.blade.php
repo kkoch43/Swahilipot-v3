@@ -10,64 +10,103 @@
     </style>
 @endsection
 @section('content')
-<div class="container" style="width: 100%;">
+<div class="container" style="width: 100%; padding-top: 50px;">
     <div class="row">
         <!--Side Bar nav-->
-        <div class="col-md-2" style="padding-left: 0px;">
-            <div class="panel panel-default dashboard-panel" id="dashboard-nav">
-                <div class="admin-profile-picture">
+        <div class="col-md-2 admin-nav" style="padding-left: 0px;">
+            <div class="panel panel-default dashboard-panel">
+                {{-- <div class="admin-profile-picture">
                     @if (Storage::disk('user_profile_pic')->has(Auth::user()->profile_pic))
                         <img class="img-responsive img-circle" src="{{ route('get.profile_pic', ['filename'=>'']) }}" title="" alt="">
                     @else
                         <img class="admin-profile-picture img-responsive img-circle" src="{{ url('img/profile.png')}}" title="" alt="">
                     @endif
-                </div>
+                </div> --}}
                 <hr style="margin: 0 auto;"/>
                 <div class="admin-details text-center">
                     <span class="fa-2x">{{ Auth::user()->name }}</span> | Admin<span class="online"></span>
                     <p>Since: &nbsp; &nbsp; {{ explode(' ', Auth::user()->created_at )[0]}}</p>
                 </div>
-                {{-- <div class="panel-body"> --}}
-                    <a class="list-group-item active" href="#">
+                {{-- <div class="" id="accordion" role="tablist" aria-multiselectable="true"> --}}
+                    <a class="list-group-item active" href="#sph-nav-dashboard" role="button"
+                    data-toggle="collapse" data-parent="#accordion"
+                    aria-expanded="true" aria-controls="sph-dashboard">
                         <i class="fa-home fa"></i>Dashboard
                         <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
                     </a>
-                    <a class="list-group-item" role="button" data-toggle="collapse" data-parent="#dashboard-nav" href="#sph-members" aria-expanded="true" aria-controls="sph-members" href="#">
-                        <i class="fa icon-people icons icon"></i>SPH Members
-                        <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
-                    </a>
-                    <div id="sph-members" class="panel-collapse collapse">
+                    <div id="sph-nav-dashboard" class="panel-collapse collapse" role="tabpanel">
                         <a class="list-group-item" href="#">Active</a>
                         <a class="list-group-item" href="#">New Member</a>
                     </div>
-                    <a class="list-group-item" href="#">
+
+                    <a class="list-group-item collapsed" href="#sph-nav-members" role="button"
+                    data-toggle="collapse" data-parent="#accordion"
+                    aria-expanded="false" aria-controls="sph-members">
+                        <i class="fa icon-people icons icon"></i>SPH Members
+                        <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+                    </a>
+                    <div id="sph-nav-members" class="panel-collapse collapse" role="tabpanel">
+                        <a class="list-group-item" href="#">Active</a>
+                        <a class="list-group-item" href="#">New Member</a>
+                    </div>
+
+                    <a class="list-group-item collapsed" href="#sph-nav-messaging" role="button"
+                    data-toggle="collapse" data-parent="#accordion"
+                    aria-expanded="false" aria-controls="sph-messaging">
                         <i class="fa fa-envelope-o"></i>Messaging
                         <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
                     </a>
+                    <div id="sph-nav-messaging" class="panel-collapse collapse" role="tabpanel">
+                        <a class="list-group-item" href="#">Active</a>
+                        <a class="list-group-item" href="#">New Member</a>
+                    </div>
+
                     <a class="list-group-item" href="#">
                         <i class="fa fa-coffee"></i>Startups
                     </a>
                     <a class="list-group-item" href="#">
                         <i class="fa icon-globe icons icon"></i>Website
                     </a>
-                    <a class="list-group-item" href="#">
+                    <a class="list-group-item collapsed" href="#sph-nav-calender" role="button"
+                    data-toggle="collapse" data-parent="#accordion"
+                    aria-expanded="false" aria-controls="sph-calendar">
                         <i class="fa fa-calendar-o"></i>Calendar
                         <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
                     </a>
-                    <a class="list-group-item" href="#">
+                    <div id="sph-nav-calender" class="panel-collapse collapse" role="tabpanel">
+                        <a class="list-group-item" href="#">Active</a>
+                        <a class="list-group-item" href="#">New Member</a>
+                    </div>
+
+                    <a class="list-group-item collapsed" href="#sph-nav-logs" role="button"
+                    data-toggle="collapse" data-parent="#accordion"
+                    aria-expanded="false" aria-controls="sph-logs">
                         <i class="fa fa-history"></i>Logs
                         <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
                     </a>
-                    <a class="list-group-item" href="#">
+                    <div id="sph-nav-logs" class="panel-collapse collapse" role="tabpanel">
+                        <a class="list-group-item" href="#">Admin Logs</a>
+                        <a class="list-group-item" href="#">Member Logs</a>
+                    </div>
+
+                    <a class="list-group-item collapsed" href="#sph-nav-settings" role="button"
+                    data-toggle="collapse" data-parent="#accordion"
+                    aria-expanded="false" aria-controls="sph-settings">
                         <i class="fa icon-settings icons icon"></i>Settings
                         <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
                     </a>
+                    <div id="sph-nav-settings" class="panel-collapse collapse" role="tabpanel">
+                        <a class="list-group-item" href="#">Preference</a>
+                        <a class="list-group-item" href="#">Edit Profile</a>
+                        <a class="list-group-item" href="#">Reset password</a>
+                        <a class="list-group-item" href="#">Sign Out</a>
+                    </div>
                 {{-- </div> --}}
             </div>
         </div>
         <!--End side bar-->
 
-        <div class="col-md-10 dashboard-container" style="padding-left: 0px;">
+        <div class="col-md-10 col-md-offset-2 dashboard-container" style="padding-left: 0px;">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="fa-2x panel-heading">Dashboard</div>

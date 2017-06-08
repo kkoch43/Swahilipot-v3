@@ -33,3 +33,10 @@ $('.collapse').on('hidden.bs.collapse', function () {
 
 // Done with the angle Icons
 // ================================================================
+
+// Toggle class active
+
+$('.panel .list-group-item').on('click', function(){
+    $('.panel .list-group-item').removeClass('active')
+    $(this).addClass('active')
+})
