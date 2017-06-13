@@ -67,7 +67,7 @@
 
       .m-b-md {
         margin-bottom: 30px;
-        margin-top: 150px;
+        padding-top: 150px;
       }
   </style>
 @endsection
