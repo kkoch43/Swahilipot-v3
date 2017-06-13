@@ -6,7 +6,9 @@
 
 @section('style')
     <style>
-
+    .form-horizontal .col-md-6{
+        margin: 0;
+    }
     </style>
 @endsection
 @section('content')
@@ -47,7 +49,7 @@
                     </a>
                     <div id="sph-nav-members" class="panel-collapse collapse" role="tabpanel">
                         <a class="list-group-item" href="#">Active</a>
-                        <a class="list-group-item" href="#">New Member</a>
+                        <a class="list-group-item" href="#" data-target="#new-member-modal" data-toggle="modal">New Member &nbsp; &nbsp;<i class="fa fa-user-plus"></i></a>
                     </div>
 
                     <a class="list-group-item collapsed" href="#sph-nav-messaging" role="button"
@@ -184,4 +186,5 @@
         </div>
     </div>
 </div>
+@include('user.admin.new-member')
 @endsection

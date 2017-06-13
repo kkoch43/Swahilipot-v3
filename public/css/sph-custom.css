@@ -55,6 +55,7 @@
 
  .collapse a:focus, .collapse a:hover{
      background: #f5f5f5 !important;
+     color: #3097d1 !important;
  }
 
  .panel a.list-group-item:focus, .panel a.list-group-item:hover{
