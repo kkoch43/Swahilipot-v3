@@ -38,6 +38,16 @@
                     @endif
                 </div>
 
+                <div class="form-group col-md-12 {{ $errors->has('email') ? ' has-error' : '' }}" >
+                    <label for="email" class="control-label">Email</label>
+                    <input class="form-control" type="email" name="email" id="email" value="">
+                    @if ($errors->has('email'))
+                        <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                    @endif
+                </div>
+
             </form>
          </div>
          <!-- End Modal Body -->

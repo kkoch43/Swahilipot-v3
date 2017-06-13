@@ -9,6 +9,9 @@
     .form-horizontal .col-md-6{
         margin: 0;
     }
+    .form-horizontal .form-group {
+        margin-left: 0px;
+    }
     </style>
 @endsection
 @section('content')
@@ -30,16 +33,16 @@
                     <p>Since: &nbsp; &nbsp; {{ explode(' ', Auth::user()->created_at )[0]}}</p>
                 </div>
                 {{-- <div class="" id="accordion" role="tablist" aria-multiselectable="true"> --}}
-                    <a class="list-group-item active" href="#sph-nav-dashboard" role="button"
+                    <a class="list-group-item active" href="{{ route('dashboard')}}" role="button"
                     data-toggle="collapse" data-parent="#accordion"
                     aria-expanded="true" aria-controls="sph-dashboard">
                         <i class="fa-home fa"></i>Dashboard
-                        <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+                        {{-- <i class="fa fa-angle-right pull-right" aria-hidden="true"></i> --}}
                     </a>
-                    <div id="sph-nav-dashboard" class="panel-collapse collapse" role="tabpanel">
+                    {{-- <div id="sph-nav-dashboard" class="panel-collapse collapse" role="tabpanel">
                         <a class="list-group-item" href="#">Active</a>
                         <a class="list-group-item" href="#">New Member</a>
-                    </div>
+                    </div> --}}
 
                     <a class="list-group-item collapsed" href="#sph-nav-members" role="button"
                     data-toggle="collapse" data-parent="#accordion"
