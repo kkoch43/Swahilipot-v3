@@ -47,7 +47,7 @@ Route::group(['prefix'=>'admin'], function(){
 */
 Route::group(['prefix'=>'user'], function(){
 
-    // Members Profile page
+    // Members Profile pageg
     Route::get('/profile', [
     'uses'=>'MemberController@getProfile',
     'as'=>'members.profile'
@@ -64,7 +64,7 @@ Route::group(['prefix'=>'user'], function(){
 * ===================================================================
 */
 
-// Retrieve prifile pic for admin/member
+// Retrieve profile pic for admin/member
 Route::get('image/profile/{filename}', [
     'uses'=>'UserController@getProfilepic',
     'as'=>'get.profile_pic'
